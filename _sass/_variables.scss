@@ -1,0 +1,40 @@
+// Brutalist Mono Palette
+$bg:           #ffffff;
+$fg:           #111111;
+$fg-muted:     #666666;
+$border:       #111111;
+$border-light: #cccccc;
+$bg-code:      #f4f4f4;
+
+// Typography — everything is monospace
+$font-mono:    'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+$font-heading: $font-mono;
+$font-body:    $font-mono;
+
+// Type scale
+$text-xs:   0.72rem;
+$text-sm:   0.8rem;
+$text-base: 0.9rem;
+$text-md:   1rem;
+$text-lg:   1.15rem;
+$text-xl:   1.4rem;
+$text-2xl:  1.75rem;
+$text-3xl:  2.1rem;
+
+// Spacing
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 2rem;
+$space-xl: 4rem;
+
+// Layout
+$max-width-prose: 720px;
+$max-width-wide:  960px;
+$nav-height:      52px;
+
+// Brutalist — no radius, no transitions
+$radius-sm: 0;
+$radius-md: 0;
+$transition-fast: 0ms;
+$transition-base: 0ms;

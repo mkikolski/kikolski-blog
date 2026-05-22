@@ -1,0 +1,135 @@
+@use 'variables' as *;
+
+.post {
+  max-width: $max-width-prose;
+  margin: 0 auto;
+  padding: $space-xl $space-lg;
+}
+
+.post-header {
+  margin-bottom: $space-xl;
+  padding-bottom: $space-lg;
+  border-bottom: 2px solid $border;
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  align-items: center;
+  font-size: $text-sm;
+  color: $fg-muted;
+  margin-bottom: $space-md;
+
+  .separator {
+    color: $border-light;
+  }
+}
+
+.post-title {
+  font-size: $text-2xl;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: $space-sm;
+
+  @media (max-width: 640px) {
+    font-size: $text-xl;
+  }
+}
+
+.post-subtitle {
+  font-size: $text-md;
+  color: $fg-muted;
+  font-style: italic;
+  margin: 0;
+}
+
+.post-hero {
+  margin: 0 0 $space-xl;
+  overflow: hidden;
+  border: 1px solid $border-light;
+
+  img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border: none;
+  }
+
+  figcaption {
+    padding: $space-sm $space-md;
+    font-size: $text-sm;
+    color: $fg-muted;
+    text-align: center;
+    border-top: 1px solid $border-light;
+  }
+}
+
+.post-content {
+  text-align: justify;
+  h2 {
+    font-size: $text-xl;
+    margin-top: $space-xl;
+    margin-bottom: $space-md;
+    padding-bottom: $space-sm;
+    border-bottom: 1px solid $border;
+  }
+
+  h3 {
+    font-size: $text-lg;
+    margin-top: $space-lg;
+    margin-bottom: $space-sm;
+  }
+
+  h4 {
+    font-size: $text-md;
+    margin-top: $space-lg;
+    margin-bottom: $space-sm;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: $space-lg auto;
+    border: 1px solid $border-light;
+  }
+
+  figure {
+    margin: $space-lg 0;
+
+    figcaption {
+      font-size: $text-sm;
+      color: $fg-muted;
+      text-align: center;
+      margin-top: $space-sm;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  ul li::before {
+    content: '> ';
+    color: $fg-muted;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 1.5rem;
+  }
+}
+
+.comments-section {
+  max-width: $max-width-prose;
+  margin: 0 auto $space-xl;
+  padding: 0 $space-lg;
+  border-top: 1px solid $border;
+  padding-top: $space-xl;
+
+  h2 {
+    font-size: $text-xl;
+    margin-bottom: $space-lg;
+  }
+}

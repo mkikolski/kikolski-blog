@@ -1,0 +1,147 @@
+@use 'variables' as *;
+
+.home-container {
+  max-width: $max-width-prose;
+  margin: 0 auto;
+  padding: $space-xl $space-lg;
+}
+
+.home-header {
+  margin-bottom: $space-xl;
+
+  h1 {
+    font-size: $text-2xl;
+    font-weight: 700;
+    margin-bottom: $space-xs;
+    margin-top: $space-md;
+  }
+
+  .site-tagline {
+    color: $fg-muted;
+    font-size: $text-sm;
+    margin: 0;
+  }
+}
+
+.ascii-hero {
+  font-family: $font-mono;
+  font-size: $text-sm;
+  line-height: 1.3;
+  color: $fg;
+  white-space: pre;
+  overflow-x: auto;
+  margin-bottom: $space-md;
+}
+
+.post-list {
+  border-top: 2px solid $border;
+
+  &__header {
+    display: grid;
+    grid-template-columns: 11ch 1fr auto;
+    gap: $space-md;
+    padding: $space-xs 0;
+    border-bottom: 1px solid $border;
+    font-size: $text-xs;
+    font-weight: 700;
+    color: $fg-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+
+.post-entry {
+  border-bottom: 1px solid $border-light;
+
+  &__link {
+    display: grid;
+    grid-template-columns: 11ch 1fr auto;
+    gap: $space-md;
+    padding: $space-sm 0;
+    text-decoration: none;
+    color: $fg;
+    align-items: baseline;
+
+    &:hover {
+      background: $fg;
+      color: $bg;
+      padding-left: $space-sm;
+      padding-right: $space-sm;
+
+      .post-entry__date,
+      .post-entry__reading-time {
+        color: $bg;
+      }
+    }
+  }
+
+  &__date {
+    font-size: $text-sm;
+    color: $fg-muted;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: $text-base;
+  }
+
+  &__reading-time {
+    font-size: $text-sm;
+    color: $fg-muted;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  &__excerpt {
+    padding: 0 0 $space-sm;
+    padding-left: calc(11ch + #{$space-md});
+    font-size: $text-sm;
+    color: $fg-muted;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  &__tags {
+    padding: 0 0 $space-xs;
+    padding-left: calc(11ch + #{$space-md});
+    font-size: $text-sm;
+
+    a {
+      color: $fg-muted;
+      text-decoration: none;
+      margin-right: $space-xs;
+
+      &::before { content: '['; }
+      &::after  { content: ']'; }
+
+      &:hover {
+        background: $fg;
+        color: $bg;
+      }
+    }
+  }
+}
+
+.tag-pill {
+  display: inline;
+  font-family: $font-mono;
+  font-size: $text-sm;
+  color: $fg;
+  text-decoration: none;
+  border: 1px solid $border;
+  padding: 0.05em 0.4em;
+
+  &:hover {
+    background: $fg;
+    color: $bg;
+    text-decoration: none;
+  }
+}
+
+.no-posts {
+  padding: $space-xl 0;
+  color: $fg-muted;
+  font-size: $text-sm;
+}

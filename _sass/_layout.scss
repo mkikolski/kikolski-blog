@@ -1,0 +1,185 @@
+@use 'variables' as *;
+
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+// Navigation
+.site-nav {
+  background: $bg;
+  border-bottom: 2px solid $border;
+
+  &__inner {
+    max-width: $max-width-wide;
+    margin: 0 auto;
+    padding: $space-sm $space-lg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__brand {
+    font-family: $font-mono;
+    font-size: $text-base;
+    font-weight: 700;
+    color: $fg;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+
+    &:hover {
+      background: $fg;
+      color: $bg;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: $space-md;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    a {
+      font-size: $text-sm;
+      font-family: $font-mono;
+      color: $fg-muted;
+      text-decoration: none;
+
+      &::before { content: '['; }
+      &::after  { content: ']'; }
+
+      &:hover,
+      &.active {
+        color: $fg;
+        background: none;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+// Page container
+.page-container {
+  max-width: $max-width-prose;
+  margin: 0 auto;
+  padding: $space-xl $space-lg;
+}
+
+.page-title {
+  font-size: $text-2xl;
+  margin-bottom: $space-xl;
+  padding-bottom: $space-sm;
+  border-bottom: 2px solid $border;
+}
+
+// Footer
+.site-footer {
+  border-top: 2px solid $border;
+  padding: $space-md $space-lg;
+  font-size: $text-sm;
+  color: $fg-muted;
+  font-family: $font-mono;
+
+  p {
+    max-width: $max-width-wide;
+    margin: 0 auto;
+    display: flex;
+    gap: $space-md;
+    align-items: center;
+  }
+
+  a {
+    color: $fg-muted;
+    text-decoration: underline;
+
+    &:hover {
+      color: $bg;
+      background: $fg;
+      text-decoration: none;
+    }
+  }
+}
+
+// About page
+.about-container {
+  max-width: $max-width-prose;
+  margin: 0 auto;
+  padding: $space-xl $space-lg;
+}
+
+.about-ascii {
+  font-family: $font-mono;
+  font-size: 0.45rem;
+  line-height: 1.2;
+  white-space: pre;
+  margin: 0 0 $space-xl;
+  color: $fg;
+  background: none;
+  border: none;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.about-intro {
+  padding-bottom: $space-xl;
+  margin-bottom: $space-xl;
+  border-bottom: 2px solid $border;
+
+  h1 {
+    font-size: $text-2xl;
+    margin: 0 0 $space-xs;
+    padding: 0;
+    border: none;
+  }
+
+  .about-roles {
+    font-size: $text-sm;
+    color: $fg-muted;
+    margin: 0 0 $space-lg;
+    letter-spacing: 0.04em;
+  }
+
+  .about-lead {
+    font-size: $text-base;
+    line-height: 1.7;
+    margin: 0;
+  }
+}
+
+.about-body {
+  h2 {
+    font-size: $text-xl;
+    margin: 0 0 $space-md;
+    padding-bottom: $space-xs;
+    border-bottom: 1px solid $border;
+  }
+}
+
+// Static pages
+.prose {
+  max-width: $max-width-prose;
+  margin: 0 auto;
+  padding: $space-xl $space-lg;
+
+  h1 {
+    margin-bottom: $space-lg;
+    padding-bottom: $space-sm;
+    border-bottom: 2px solid $border;
+  }
+
+  h2 {
+    margin-top: $space-xl;
+    margin-bottom: $space-md;
+  }
+
+  h3 {
+    margin-top: $space-lg;
+    margin-bottom: $space-sm;
+  }
+}

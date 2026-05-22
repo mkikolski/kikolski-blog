@@ -1,0 +1,43 @@
+title: "This is a blog of Mikołaj Kikolski"
+headertitle: "mkikolski"
+description: "Created out of pure hatered towards Linkedin, both as a platform and a mindset, this is the place where I'll share my achievements, ongoing research, hobby projects, random thoughts or recipes. Feel free to comment on the posts and get in touch with me."
+author:
+  name: "Mikolaj Kikolski"
+  email: "mikolaj.kikolski@pwr.edu.pl"
+url: "https://blog.kikolski.pl"
+baseurl: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: "highlight"
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+giscus:
+  repo: "mkikolski/kikolski-blog"
+  repo_id: "REPLACE_AFTER_CREATING_REPO"
+  category: "Announcements"
+  category_id: "REPLACE_AFTER_CREATING_REPO"
+  mapping: "pathname"
+  reactions_enabled: "1"
+  theme: "light"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .gitignore
+  - vendor/
+  - .bundle/

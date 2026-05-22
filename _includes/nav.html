@@ -1,0 +1,10 @@
+<nav class="site-nav">
+  <div class="site-nav__inner">
+    <a href="{{ '/' | relative_url }}" class="site-nav__brand">{{ site.headertitle | downcase }}</a>
+    <ul class="site-nav__links">
+      <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>posts</a></li>
+      <li><a href="{{ '/tags/' | relative_url }}"{% if page.url contains '/tags' %} class="active"{% endif %}>tags</a></li>
+      <li><a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} class="active"{% endif %}>about</a></li>
+    </ul>
+  </div>
+</nav>

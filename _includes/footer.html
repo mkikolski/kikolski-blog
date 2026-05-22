@@ -1,0 +1,6 @@
+<footer class="site-footer">
+  <p>
+    <span>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}</span>
+    <a href="{{ site.feed.path | default: '/feed.xml' | relative_url }}">rss</a>
+  </p>
+</footer>

@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </time>
+      <span class="separator">&middot;</span>
+      {% include reading-time.html content=content %}
+      {% if page.tags.size > 0 %}
+        <span class="separator">&middot;</span>
+        {% for tag in page.tags %}
+          <a href="{{ '/tags/#tag-' | append: tag | slugify | relative_url }}" class="tag-pill">{{ tag }}</a>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <h1 class="post-title">{{ page.title }}</h1>
+
+    {% if page.subtitle %}
+      <p class="post-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
+
+  {% if page.image %}
+  <figure class="post-hero">
+    <img src="{{ page.image | relative_url }}"
+         alt="{{ page.image_alt | default: page.title }}"
+         loading="eager" />
+    {% if page.image_caption %}
+      <figcaption>{{ page.image_caption }}</figcaption>
+    {% endif %}
+  </figure>
+  {% endif %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>
+
+<section class="comments-section">
+  <h2>Discussion</h2>
+  {% include giscus.html %}
+</section>

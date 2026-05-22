@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<div class="home-container">
+  <header class="home-header">
+    <h1>{{ site.title }}</h1>
+    <p class="site-tagline">{{ site.description }}</p>
+  </header>
+
+  {% if site.posts.size > 0 %}
+  <section class="post-list">
+    <div class="post-list__header">
+      <span>date</span>
+      <span>title</span>
+      <span>read</span>
+    </div>
+    {% for post in site.posts %}
+      {% include post-card.html post=post %}
+    {% endfor %}
+  </section>
+  {% else %}
+  <p class="no-posts">no posts yet.</p>
+  {% endif %}
+</div>

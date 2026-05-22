@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+  <div class="site-wrapper">
+    {% include nav.html %}
+    <main id="main-content">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var types = ['NOTE', 'TIP', 'IMPORTANT', 'WARNING', 'CAUTION'];
+      var re = new RegExp('^\\[!(' + types.join('|') + ')\\]', 'i');
+
+      document.querySelectorAll('blockquote').forEach(function (bq) {
+        var firstP = bq.querySelector('p');
+        if (!firstP) return;
+
+        var match = firstP.innerHTML.match(re);
+        if (!match) return;
+
+        var type = match[1].toUpperCase();
+        bq.classList.add('gh-alert', 'gh-alert--' + type.toLowerCase());
+
+        var rest = firstP.innerHTML.slice(match[0].length).replace(/^(\n|<br\s*\/?>)/i, '').trim();
+        if (rest) {
+          firstP.innerHTML = '<span class="gh-alert-label">' + type + '</span>' + rest;
+        } else {
+          firstP.innerHTML = '<span class="gh-alert-label">' + type + '</span>';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

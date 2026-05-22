@@ -1,0 +1,109 @@
+@use 'variables' as *;
+
+body {
+  font-family: $font-mono;
+  font-size: $text-base;
+  line-height: 1.7;
+  color: $fg;
+  background-color: $bg;
+}
+
+a {
+  color: $fg;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    background: $fg;
+    color: $bg;
+    text-decoration: none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-mono;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $fg;
+}
+
+h1 { font-size: $text-2xl; }
+h2 { font-size: $text-xl; }
+h3 { font-size: $text-lg; }
+h4 { font-size: $text-md; }
+
+p { margin-bottom: $space-md; }
+
+blockquote {
+  border-left: 3px solid $fg;
+  padding: $space-xs $space-md;
+  margin: $space-lg 0;
+  color: $fg-muted;
+
+  p { margin-bottom: 0; }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $border;
+  margin: $space-xl 0;
+}
+
+ul, ol {
+  padding-left: $space-lg;
+  margin-bottom: $space-md;
+
+  li {
+    margin-bottom: $space-xs;
+  }
+}
+
+code {
+  font-family: $font-mono;
+  font-size: 0.9em;
+  background: $bg-code;
+  padding: 0.1em 0.35em;
+  border: 1px solid $border-light;
+  border-radius: 0;
+}
+
+pre {
+  margin: $space-lg 0;
+  border: 1px solid $border;
+  padding: $space-md;
+  overflow-x: auto;
+  background: $bg-code;
+
+  code {
+    background: none;
+    padding: 0;
+    border: none;
+    font-size: 0.85rem;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: $space-lg;
+  font-size: $text-sm;
+
+  th, td {
+    padding: $space-sm $space-md;
+    border: 1px solid $border;
+    text-align: left;
+  }
+
+  th {
+    font-weight: 700;
+    background: $fg;
+    color: $bg;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid $border-light;
+}

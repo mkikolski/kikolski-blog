@@ -1,0 +1,42 @@
+@use 'variables' as *;
+
+$alert-colors: (
+  'note':      #61afef,
+  'tip':       #98c379,
+  'important': #c678dd,
+  'warning':   #e5c07b,
+  'caution':   #e06c75,
+);
+
+.gh-alert {
+  border-left: 3px solid;
+  padding: 0.75rem $space-md;
+  margin: $space-lg 0;
+
+  p {
+    margin: 0;
+
+    & + p {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .gh-alert-label {
+    display: block;
+    font-size: $text-xs;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  @each $type, $color in $alert-colors {
+    &.gh-alert--#{$type} {
+      border-color: $color;
+
+      .gh-alert-label {
+        color: $color;
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+@use 'variables' as *;
+
+// One Dark-inspired color scheme
+$s-bg:      #282c34;
+$s-fg:      #abb2bf;
+$s-red:     #e06c75;
+$s-green:   #98c379;
+$s-yellow:  #e5c07b;
+$s-blue:    #61afef;
+$s-purple:  #c678dd;
+$s-cyan:    #56b6c2;
+$s-comment: #5c6370;
+
+.highlight {
+  background: $s-bg;
+  padding: $space-md;
+  overflow-x: auto;
+  margin: $space-lg 0;
+  font-family: $font-mono;
+  font-size: 0.85rem;
+  line-height: 1.6;
+
+  pre {
+    margin: 0;
+    background: none;
+  }
+
+  code {
+    background: none;
+    padding: 0;
+    border: none;
+    font-size: inherit;
+    color: $s-fg;
+  }
+
+  // Comments
+  .c, .c1, .cm, .cs, .cp { color: $s-comment; font-style: italic; }
+
+  // Keywords
+  .k, .kd, .kn, .kr, .kc { color: $s-purple; font-weight: 700; }
+  .kt { color: $s-yellow; }
+
+  // Strings
+  .s, .s1, .s2, .sb, .sc, .sd, .sh, .sx { color: $s-green; }
+  .se { color: $s-cyan; }
+  .si { color: $s-cyan; font-style: italic; }
+  .sr { color: $s-cyan; }
+  .ss { color: $s-green; }
+
+  // Numbers
+  .mi, .mf, .mo, .mh, .m { color: $s-yellow; }
+
+  // Function names / method calls
+  .nf, .nd { color: $s-blue; }
+
+  // Class names
+  .nc { color: $s-yellow; }
+
+  // Built-ins
+  .nb, .bp { color: $s-cyan; }
+
+  // Constants
+  .no { color: $s-red; }
+
+  // Decorators / annotations
+  .nd { color: $s-yellow; }
+
+  // Namespaces / modules
+  .nn { color: $s-yellow; }
+
+  // Variables
+  .nv, .vi, .vc, .vg { color: $s-red; }
+
+  // Attributes / params
+  .na, .ni, .nl { color: $s-red; }
+
+  // Other names (default fg)
+  .n { color: $s-fg; }
+
+  // Operators
+  .o, .ow { color: $s-cyan; }
+
+  // Punctuation
+  .p { color: $s-fg; }
+
+  // Errors
+  .err { color: $s-red; background: none; }
+
+  // Generic diff
+  .gd { color: $s-red; }
+  .gi { color: $s-green; }
+  .gh { color: $s-blue; font-weight: bold; }
+  .gu { color: $s-purple; }
+}
+
+:not(.highlight) > code {
+  font-family: $font-mono;
+  font-size: 0.9em;
+  background: $bg-code;
+  color: $fg;
+  padding: 0.1em 0.35em;
+  border: 1px solid $border-light;
+  border-radius: 0;
+}

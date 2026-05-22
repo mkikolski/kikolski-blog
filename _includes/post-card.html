@@ -1,0 +1,19 @@
+<article class="post-entry">
+  <a href="{{ include.post.url | relative_url }}" class="post-entry__link">
+    <time class="post-entry__date" datetime="{{ include.post.date | date_to_xmlschema }}">
+      {{ include.post.date | date: "%Y-%m-%d" }}
+    </time>
+    <span class="post-entry__title">{{ include.post.title }}</span>
+    <span class="post-entry__reading-time">{% include reading-time.html content=include.post.content %}</span>
+  </a>
+  {% if include.post.tags.size > 0 %}
+  <div class="post-entry__tags">
+    {% for tag in include.post.tags %}
+    <a href="{{ '/tags/#tag-' | append: tag | slugify | relative_url }}">{{ tag }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% if include.post.excerpt %}
+  <p class="post-entry__excerpt">{{ include.post.excerpt | strip_html | truncate: 160 }}</p>
+  {% endif %}
+</article>
