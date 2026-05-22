@@ -3,6 +3,7 @@ layout: default
 title: About
 permalink: /about/
 ---
+
 <div class="about-container">
   <pre class="about-ascii">
 *#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -67,6 +68,6 @@ permalink: /about/
   <div class="about-body">
     <h2>Contact</h2>
     <p>Reach me at <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>.</p>
-    <p> or at <a href="mailto:mikolaj@kikolski.pl">mikolaj@kikolski.pl</a></p>
+    <p> or at <a href="mailto:admin@kikolski.pl">admin@kikolski.pl</a></p>
   </div>
 </div>
