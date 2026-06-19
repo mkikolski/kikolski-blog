@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Short: git kurwa - unleash your anger"
+title: "Short: Unleashing your anger using git VSC"
 subtitle: "A short info on an unhinged git config"
 date: 2026-05-04 19:00:00 +0200
 tags: [short, coding, git, funny]
